@@ -1,16 +1,15 @@
 {
-  "name": "gatsby-starter-material-ui",
+  "name": "Santiago-maurig",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby and Material UI",
+  "description": "Personal web site based on Gatsby",
   "version": "0.1.0",
-  "author": "Dominic Abela <djmabela@gmail.com>",
+  "author": "Pablo Maurig <pablomaurig@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^4.7.1",
     "@material-ui/icons": "^4.5.1",
     "@material-ui/styles": "^4.7.1",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby": "^2.18.6",
-    "gatsby-background-image": "^0.9.11",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-manifest": "^2.2.31",
     "gatsby-plugin-material-ui": "^2.1.6",
@@ -19,12 +18,12 @@
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-styled-components": "^3.1.19",
     "gatsby-source-filesystem": "^2.1.40",
-    "gatsby-transformer-json": "^2.2.26",
     "gatsby-transformer-sharp": "^2.3.6",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "smooth-scroll": "^16.1.2",
     "styled-components": "^4.4.1",
     "typeface-roboto": "0.0.54"
   },
@@ -45,9 +44,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dominicabela/gatsby-starter-material-ui"
+    "url": "https://github.com/pablomaurig/santimaurig"
   },
   "bugs": {
-    "url": "https://github.com/dominicabela/gatsby-starter-material-ui/issues"
+    "url": "https://github.com/pablomaurig/santimaurig/issues"
   }
 }

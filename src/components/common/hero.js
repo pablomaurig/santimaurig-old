@@ -25,16 +25,9 @@ const Hero = () => {
     height: 100vh;
     background-size: cover;
     background-image: ${`url(${data.image.childImageSharp.fluid.src})`};
-    &:before{
-      position: absolute;
-      left: 0;
-      top: 0;
-      right:0;
-      bottom: 0;
-      background: rgba(115, 57, 16, 0.5);
-      content: "";
-      z-index: 2;
-    }
+    border: 2rem solid white;
+    box-sizing: border-box;
+
     .container{
       height: 100%;
       z-index: 3;
@@ -46,7 +39,8 @@ const Hero = () => {
       <Container className="container">
         <Grid container alignItems="center" style={{ height: '100%' }}>
           <Grid item xs={12}>
-            <Typography align="center" variant="h2" style={{ color: "white" }}>LeckerBissen</Typography>
+            <Typography align="center" variant="h2" style={{ color: "white" }}>IMPACTA EN TUS CLIENTES</Typography>
+            <Typography align="center" variant="h4" style={{ color: "white" }}>CON UNA VOZ PROFESIONAL, NATURAL Y VERSATIL</Typography>
           </Grid>
         </Grid>
       </Container>

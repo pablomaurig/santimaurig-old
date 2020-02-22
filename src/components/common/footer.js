@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Footer = () => {
-    return <Container>
-        © {new Date().getFullYear()} | LeckerBissen
+  return <Container>
+    © {new Date().getFullYear()} | Santiago Maurig
     </Container>
 }
 const Container = styled.footer`

@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
-import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 // components
 import AppBar from '@material-ui/core/AppBar'
@@ -20,18 +19,6 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   }
-  const data = useStaticQuery(graphql`
-  query MenuItems{
-    allProductosJson {
-      edges {
-        node {
-          name
-          path
-        }
-      }
-    }
-  }
-`)
   return (<StyledContainer>
     <AppBar
       elevation={0}
@@ -39,14 +26,17 @@ const Header = () => {
     >
       <Toolbar>
         <Typography className='nav-brand' variant="h6">
-          <Link className='brand' to={`/`}>Leckerbissen</Link>
+          <Link className='brand' to={`/`}>Santiago Maurig</Link>
         </Typography>
         <Hidden xsDown>
-          <Typography className='nav-bar' color='white' style={{ marginLeft: 'auto' }}>
-            {data.allProductosJson.edges.map((menuItem) =>
-              <Link key={menuItem.node.name} className='nav-link' to={`/${menuItem.node.path}`}>{menuItem.node.name}</Link>
-            )}
-            {/* <Link className='nav-link' to={`/contacto`}>Contacto</Link> */}
+          <Typography className='nav-bar' color='white' style={{ marginLeft: 'auto', marginRight: '10px' }}>
+            <Link partiallyActive={true} activeClassName='active' className='nav-link' to={`/#about`}>About</Link>
+          </Typography>
+          <Typography className='nav-bar' color='white' style={{ marginRight: '10px' }}>
+            <Link activeClassName='active' className='nav-link' to={`/#locucion`}>Locución</Link>
+          </Typography>
+          <Typography className='nav-bar' color='white'>
+            <Link activeClassName='active' className='nav-link' to={`/#docencia`}>Docencia</Link>
           </Typography>
         </Hidden>
         <Hidden smUp>
@@ -64,14 +54,15 @@ const Header = () => {
             open={Boolean(anchorEl)}
             onClose={handleClose}
           >
-            {data.allProductosJson.edges.map((menuItem) =>
-              <Link key={menuItem.node.name} to={`/${menuItem.node.path}`}>
-                <MenuItem onClick={handleClose}>{menuItem.node.name}</MenuItem>
-              </Link>
-            )}
-            {/* <Link to={`/contacto`}>
-                <MenuItem onClick={handleClose}>Contacto</MenuItem>
-              </Link> */}
+            <Link to={`/#about`}>
+              <MenuItem onClick={handleClose}>About</MenuItem>
+            </Link>
+            <Link to={`/#locucion`}>
+              <MenuItem onClick={handleClose}>Locución</MenuItem>
+            </Link>
+            <Link to={`/#docencia`}>
+              <MenuItem onClick={handleClose}>Docencia</MenuItem>
+            </Link>
           </Menu>
         </Hidden>
       </Toolbar>
@@ -92,6 +83,9 @@ const StyledContainer = styled.div`
   .nav-bar{
     .nav-link{
       color: saddlebrown;
+      .active{
+        color:red;
+      }
     }
     .nav-link + .nav-link{
       margin-left: 20px;

@@ -1,22 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
-import { graphql, useStaticQuery } from 'gatsby'
 import { Grid, Container, Box, Typography, Button } from '@material-ui/core'
 
 const PreFooter = () => {
-  const data = useStaticQuery(graphql`
-  query papu{
-    allProductosJson {
-      edges {
-        node {
-          name
-          path
-        }
-      }
-    }
-  }
-`)
   return <PFooter>
     <Box component="section" py={5}>
       <Container>
@@ -30,12 +16,6 @@ const PreFooter = () => {
             <Typography gutterBottom variant="h6" component="h3">
               Productos
             </Typography>
-
-            {data.allProductosJson.edges.map((menuItem) =>
-              <div key={menuItem.node.name}>
-                <Button component={Link} to={`/${menuItem.node.path}`} color="inherit">{menuItem.node.name}</Button>
-              </div>
-            )}
           </Grid>
           <Grid item xs={12} sm={5} style={{ textAlign: 'right' }}>
             <Typography gutterBottom variant="h6" component="h3">

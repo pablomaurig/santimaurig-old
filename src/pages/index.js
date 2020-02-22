@@ -1,42 +1,26 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { graphql, useStaticQuery } from 'gatsby'
+import Img from "gatsby-image"
+import styled from 'styled-components'
 
 import Layout from '../components/common/layout'
 import SEO from '../components/common/seo'
 import Hero from '../components/common/hero'
 import SectionAbout from '../components/home/sectionAbout'
-import { Grid, Divider, Container, Box, Card, CardActionArea, CardContent, CardMedia, Typography } from '@material-ui/core'
+import { Grid, Divider, Container, Box, Typography } from '@material-ui/core'
 
 const IndexPage = () => {
-
+  if (typeof window !== "undefined") {
+    require("smooth-scroll")('a[href*="#"]', {
+      offset: 64
+    })
+  }
   const data = useStaticQuery(graphql`
     query Home{
-      homeJson {
-        descripcion
-        imagen
-      }
-      allProductosJson {
-        edges {
-          node {
-            name
-            excerp
-            image
-            path
-          }
-        }
-      }
-      allImageSharp {
-        edges {
-          node {
-            fluid {
-              ...GatsbyImageSharpFluid
-              originalName
-            }
-            fixed (width: 500, height:400){
-              ...GatsbyImageSharpFixed
-              originalName
-            }
+      file(name: {eq: "barritas"}) {
+        childImageSharp {
+          fixed(width: 300, height: 200) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -44,55 +28,217 @@ const IndexPage = () => {
 `)
   return (
     < Layout >
-      <SEO title="Home" />
-      <div>pedrito</div>
-      <Hero />
-      <SectionAbout texto={data.homeJson.descripcion} imagen={data.homeJson.imagen} />
-      <Container><Divider /></Container>
-      <Box component="section" py={5}>
-        <Container>
-          <Grid container spacing={3} justify="center">
-            <Grid item xs={12}>
-              <Typography align="center" gutterBottom variant="h5" component="h2">
-                Nuestros productos
+      <StyleContainer>
+        <SEO
+          title="Santiago Maurig"
+          description="" />
+        <Hero />
+        <Box component="section" py={5}>
+          <Container>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12}>
+                <Typography align="center" gutterBottom variant="h5" component="h2">
+                  Marcas
               </Typography>
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
             </Grid>
-
-            {data.allProductosJson.edges.map((product) => {
-
-              let imageQuery = data.allImageSharp.edges.find(
-                edge => edge.node.fixed.originalName === product.node.image
-              )
-              return (
-                <Grid item xs={12} sm={6} key={product.node.name}>
-                  <Link to={`/${product.node.path}`}>
-                    <Card >
-                      <CardActionArea>
-                        <CardMedia
-                          style={{ backgroundImage: `url(${imageQuery.node.fixed.src})`, height: '260px' }}
-                          title="Contemplative Reptile"
-                        />
-                        <CardContent>
-                          <Typography gutterBottom variant="h5" component="h2">
-                            {product.node.name}
-                          </Typography>
-                          <Typography variant="body2" color="textSecondary" component="p">
-                            {product.node.excerp}
-                          </Typography>
-                        </CardContent>
-                      </CardActionArea>
-                    </Card>
-                  </Link>
-                </Grid>)
-            }
-            )}
-
-          </Grid>
-        </Container>
-      </Box>
-      <Divider />
+          </Container>
+        </Box>
+        <Container><Divider /></Container>
+        <Box id='locucion' component="section" py={5}>
+          <Container>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12} sm={3}>
+                <Typography align="center" gutterBottom variant="h5" component="h2">
+                  Locución
+              </Typography>
+              </Grid>
+              <Grid item xs={12} sm={9}>
+                <Grid container spacing={3} justify="center">
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+        <Container><Divider /></Container>
+        <Box component="section" py={5}>
+          <Container>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12} sm={5}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={12} sm={7}>
+                <Typography align="left" gutterBottom variant="h5" component="h2">
+                  Combate
+                </Typography>
+                <Typography align="left" gutterBottom component="p">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                </Typography>
+              </Grid>
+            </Grid>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12} sm={5}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={12} sm={7}>
+                <Typography align="left" gutterBottom variant="h5" component="h2">
+                  Vorterix
+                </Typography>
+                <Typography align="left" gutterBottom component="p">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+                </Typography>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+        <Container><Divider /></Container>
+        <Box component="section" py={5}>
+          <Container>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12}>
+                <Typography align="center" gutterBottom variant="h5" component="h2">
+                  Marcas 2
+              </Typography>
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+              <Grid item xs={6} sm={4}>
+                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+        <Container><Divider /></Container>
+        <SectionAbout id='about' texto="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum" imagen="hero-image.jpg" />
+        <Box component="section" py={5}>
+          <Container>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12} sm={3} style={{ order: '2' }}>
+                <Typography align="center" gutterBottom variant="h5" component="h2">
+                  Doblaje
+              </Typography>
+              </Grid>
+              <Grid item xs={12} sm={9}>
+                <Grid container spacing={3} justify="center">
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                  <Grid item xs={6} sm={4}>
+                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+        <Container><Divider /></Container>
+        <Box id='docencia' component="section" py={5}>
+          <Container>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12} sm={8} >
+                <Typography align="center" gutterBottom variant="h5" component="h2">
+                  Docencia
+                </Typography>
+                <Typography align="center" gutterBottom component="p">
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                </Typography>
+              </Grid>
+              <Grid container spacing={3} justify="center">
+                <Grid item xs={12} sm={4} >
+                  <Typography align="center" gutterBottom component="p">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                </Typography>
+                </Grid>
+                <Grid item xs={12} sm={4} >
+                  <Typography align="center" gutterBottom component="p">
+                    Lorem Ipsum is simply dummy ty of type and scrambled it to make a type specimen book. It has survived not only
+                </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+        <Box component="section" py={5}>
+          <Container>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12}>
+                <Typography align="center" gutterBottom variant="h5" component="h2">
+                  Contacto
+              </Typography>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
+      </StyleContainer>
     </Layout >
   )
 }
-
+const StyleContainer = styled.div`
+  .img-responsive{
+    width: 100%;
+    height: auto;
+    
+  }
+`
 export default IndexPage

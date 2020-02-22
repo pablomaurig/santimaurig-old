@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import { Grid, Container, Box } from '@material-ui/core'
 
-const SectionAbout = ({ texto, imagen }) => {
+const SectionAbout = ({ texto, imagen, id }) => {
   const data = useStaticQuery(graphql` 
   query {
     allImageSharp {
@@ -28,7 +28,7 @@ const SectionAbout = ({ texto, imagen }) => {
   )
 
   return (
-    <Box component="section" py={5}>
+    <Box id={id} component="section" py={5}>
       <Container>
         <Grid container spacing={3} justify="center">
           <Grid item xs={12} sm={6}>
