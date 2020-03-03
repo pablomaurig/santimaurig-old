@@ -2,9 +2,10 @@ import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 // compornents
 import Img from 'gatsby-image'
-import { Grid, Container, Box } from '@material-ui/core'
+import { Grid, Container, Box, Typography } from '@material-ui/core'
 
-const SectionAbout = ({ texto, imagen, id }) => {
+
+const SectionAbout = ({ titulo, texto, imagen, id }) => {
   const data = useStaticQuery(graphql` 
   query {
     allImageSharp {
@@ -32,7 +33,12 @@ const SectionAbout = ({ texto, imagen, id }) => {
       <Container>
         <Grid container spacing={3} justify="center">
           <Grid item xs={12} sm={6}>
-            {texto}
+            <Typography align="center" gutterBottom variant="h5" component="h2">
+              {titulo}
+            </Typography>
+            <Typography align="center" gutterBottom component="p">
+              {texto}
+            </Typography>
           </Grid>
           <Grid item xs={12} sm={6}>
             {!!imageQuery &&

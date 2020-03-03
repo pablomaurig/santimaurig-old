@@ -1,0 +1,1 @@
+{"errors":[{"message":"Variable \"$originalName\" of required type \"String!\" was not provided.","locations":[{"line":9,"column":16}]}]}
