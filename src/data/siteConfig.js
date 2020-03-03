@@ -9,7 +9,7 @@ module.exports = {
   brandsTop: [
     {
       image: 'warner.png',
-      alt: ''
+      alt: 'se'
     }, {
       image: 'discovery.png',
       alt: ''

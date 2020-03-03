@@ -10,6 +10,7 @@ import Hero from '../components/common/hero'
 import SectionAbout from '../components/home/sectionAbout'
 import { Grid, Divider, Container, Box, Typography } from '@material-ui/core'
 import siteConfig from '../data/siteConfig'
+import MyImg from '../components/common/myImg'
 
 const IndexPage = () => {
   if (typeof window !== "undefined") {
@@ -63,7 +64,7 @@ const IndexPage = () => {
               <Grid item xs={12} sm={9}>
                 <Grid container spacing={3} justify="center">
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <MyImg alt={siteConfig.brandsTop[1].alt} className='img-responsive' imagen={siteConfig.brandsTop[0].image} />
                   </Grid>
                   <Grid item xs={6} sm={4}>
                     <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
