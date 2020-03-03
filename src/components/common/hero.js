@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 
 import { Grid, Typography, Container } from '@material-ui/core'
 
-const Hero = () => {
+const Hero = ({ props }) => {
   const data = useStaticQuery(graphql` 
     query HeroImage{
       image: file(relativePath: {eq: "back-hero.png"}) {
@@ -25,7 +25,7 @@ const Hero = () => {
     height: 100vh;
     background-size: cover;
     background-image: ${`url(${data.image.childImageSharp.fluid.src})`};
-    border: 2rem solid white;
+    border: 2rem solid #fff;
     box-sizing: border-box;
 
     .container{
@@ -39,8 +39,8 @@ const Hero = () => {
       <Container className="container">
         <Grid container alignItems="center" style={{ height: '100%' }}>
           <Grid item xs={12}>
-            <Typography align="center" variant="h2" style={{ color: "#000" }}>IMPACTA EN TUS CLIENTES</Typography>
-            <Typography align="center" variant="h4" style={{ color: "#000" }}>CON UNA VOZ PROFESIONAL, NATURAL Y VERSATIL</Typography>
+            <Typography align="center" variant="h2" style={{ color: "#000" }}>{props.heroTop}</Typography>
+            <Typography align="center" variant="h4" style={{ color: "#000" }}>{props.heroBottom}</Typography>
           </Grid>
         </Grid>
       </Container>

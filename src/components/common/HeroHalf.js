@@ -49,7 +49,7 @@ const HeroHalf = ({ align, text, variant }) => {
       <Container className='container'>
         <Grid container alignItems={align} style={{ height: '100%' }}>
           <Grid item xs={12} >
-            <Typography align="left" gutterBottom variant={variant} style={{ color: "white", }}>{text}</Typography>
+            <Typography align="left" gutterBottom variant={variant} style={{ color: "#fff", }}>{text}</Typography>
           </Grid>
         </Grid>
       </Container>

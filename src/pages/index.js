@@ -9,6 +9,7 @@ import SEO from '../components/common/seo'
 import Hero from '../components/common/hero'
 import SectionAbout from '../components/home/sectionAbout'
 import { Grid, Divider, Container, Box, Typography } from '@material-ui/core'
+import siteConfig from '../data/siteConfig'
 
 const IndexPage = () => {
   if (typeof window !== "undefined") {
@@ -33,7 +34,7 @@ const IndexPage = () => {
         <SEO
           title="Santiago Maurig"
           description="" />
-        <Hero />
+        <Hero props={siteConfig} />
         <Box component="section" py={5}>
           <Container>
             <Grid container spacing={3} justify="center">
@@ -42,24 +43,11 @@ const IndexPage = () => {
                   Marcas
               </Typography>
               </Grid>
-              <Grid item xs={6} sm={4}>
-                <Image className='img-responsive' imagen='disney.png' />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
+              {siteConfig.brandsTop.map((brand, i) =>
+                <Grid key={i} item xs={6} sm={4} md={3}>
+                  <Image alt={brand.alt} className='img-responsive' imagen={brand.image} />
+                </Grid>
+              )}
             </Grid>
           </Container>
         </Box>
@@ -137,24 +125,11 @@ const IndexPage = () => {
                   Marcas 2
               </Typography>
               </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
-              <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-              </Grid>
+              {siteConfig.brandsTop.map((brand, i) =>
+                <Grid key={i} item xs={6} sm={4} md={3}>
+                  <Image alt={brand.alt} className='img-responsive' imagen={brand.image} />
+                </Grid>
+              )}
             </Grid>
           </Container>
         </Box>

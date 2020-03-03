@@ -29,13 +29,13 @@ const Header = () => {
           <Link className='brand' to={`/`}>Santiago Maurig</Link>
         </Typography>
         <Hidden xsDown>
-          <Typography className='nav-bar' color='white' style={{ marginLeft: 'auto', marginRight: '10px' }}>
+          <Typography className='nav-bar' style={{ marginLeft: 'auto', marginRight: '10px' }}>
             <Link partiallyActive={true} activeClassName='active' className='nav-link' to={`/#about`}>About</Link>
           </Typography>
-          <Typography className='nav-bar' color='white' style={{ marginRight: '10px' }}>
+          <Typography className='nav-bar' style={{ marginRight: '10px' }}>
             <Link activeClassName='active' className='nav-link' to={`/#locucion`}>Locución</Link>
           </Typography>
-          <Typography className='nav-bar' color='white'>
+          <Typography className='nav-bar'>
             <Link activeClassName='active' className='nav-link' to={`/#docencia`}>Docencia</Link>
           </Typography>
         </Hidden>
@@ -71,18 +71,25 @@ const Header = () => {
 }
 
 const StyledContainer = styled.div`
+  header{
+    box-shadow: 0 3px 5px rgba(0,0,0,.1);
+  }
+  .MuiToolbar-root{
+    /* grid-template-columns: 1fr 1fr 1fr;
+    display: grid; */
+  }
   .MuiIconButton-label{
-    svg{fill: saddlebrown} 
+    svg{fill: black} 
   }
   .header{
     background: #fff;
   }
   .nav-brand .brand{
-    color: saddlebrown;
+    color: black;
   }
   .nav-bar{
     .nav-link{
-      color: saddlebrown;
+      color: black;
       .active{
         color:red;
       }
