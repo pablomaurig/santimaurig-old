@@ -376,7 +376,7 @@ const createComponentUrls = componentChunkName => window.___chunkMapping[compone
 
 class ProdLoader extends BaseLoader {
   constructor(asyncRequires, matchPaths) {
-    const loadComponent = chunkName => asyncRequires.components[chunkName]().then(preferDefault);
+    const loadComponent = chunkName => asyncRequires.components[chunkName] ? asyncRequires.components[chunkName]().then(preferDefault) : Promise.resolve();
 
     super(loadComponent, matchPaths);
   }

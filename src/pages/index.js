@@ -1,8 +1,9 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import Img from "gatsby-image"
 import styled from 'styled-components'
-
+// components
+import Img from "gatsby-image"
+import Image from '../components/common/image'
 import Layout from '../components/common/layout'
 import SEO from '../components/common/seo'
 import Hero from '../components/common/hero'
@@ -42,7 +43,7 @@ const IndexPage = () => {
               </Typography>
               </Grid>
               <Grid item xs={6} sm={4}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                <Image className='img-responsive' imagen='disney.png' />
               </Grid>
               <Grid item xs={6} sm={4}>
                 <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />

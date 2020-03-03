@@ -21,6 +21,8 @@ var _emitter = _interopRequireDefault(require("./emitter"));
 
 var _router = require("@reach/router");
 
+var _history = require("@reach/router/lib/history");
+
 var _gatsbyLink = require("gatsby-link");
 
 const redirectMap = _redirects.default.reduce((map, redirect) => {
@@ -62,18 +64,11 @@ const onRouteUpdate = (location, prevLocation) => {
     (0, _apiRunnerBrowser.apiRunner)(`onRouteUpdate`, {
       location,
       prevLocation
-    }); // Temp hack while awaiting https://github.com/reach/router/issues/119
-
-    window.__navigatingToLink = false;
+    });
   }
 };
 
 const navigate = (to, options = {}) => {
-  // Temp hack while awaiting https://github.com/reach/router/issues/119
-  if (!options.replace) {
-    window.__navigatingToLink = true;
-  }
-
   let {
     pathname
   } = (0, _gatsbyLink.parsePath)(to);
@@ -114,6 +109,8 @@ const navigate = (to, options = {}) => {
     if (!pageResources || pageResources.status === `error`) {
       window.history.replaceState({}, ``, location.href);
       window.location = pathname;
+      clearTimeout(timeoutId);
+      return;
     } // If the loaded page has a different compilation hash to the
     // window, then a rebuild has occurred on the server. Reload.
 
@@ -178,8 +175,11 @@ function shouldUpdateScroll(prevRouterProps, {
 }
 
 function init() {
-  // Temp hack while awaiting https://github.com/reach/router/issues/119
-  window.__navigatingToLink = false;
+  // The "scroll-behavior" package expects the "action" to be on the location
+  // object so let's copy it over.
+  _history.globalHistory.listen(args => {
+    args.location.action = args.action;
+  });
 
   window.___push = to => navigate(to, {
     replace: false
@@ -193,6 +193,57 @@ function init() {
 
 
   maybeRedirect(window.location.pathname);
+}
+
+class RouteAnnouncer extends _react.default.Component {
+  constructor(props) {
+    super(props);
+    this.announcementRef = _react.default.createRef();
+  }
+
+  componentDidUpdate(prevProps, nextProps) {
+    requestAnimationFrame(() => {
+      let pageName = `new page at ${this.props.location.pathname}`;
+
+      if (document.title) {
+        pageName = document.title;
+      }
+
+      const pageHeadings = document.getElementById(`gatsby-focus-wrapper`).getElementsByTagName(`h1`);
+
+      if (pageHeadings && pageHeadings.length) {
+        pageName = pageHeadings[0].textContent;
+      }
+
+      const newAnnouncement = `Navigated to ${pageName}`;
+      const oldAnnouncement = this.announcementRef.current.innerText;
+
+      if (oldAnnouncement !== newAnnouncement) {
+        this.announcementRef.current.innerText = newAnnouncement;
+      }
+    });
+  }
+
+  render() {
+    return _react.default.createElement("div", {
+      id: "gatsby-announcer",
+      style: {
+        position: `absolute`,
+        top: 0,
+        width: 1,
+        height: 1,
+        padding: 0,
+        overflow: `hidden`,
+        clip: `rect(0, 0, 0, 0)`,
+        whiteSpace: `nowrap`,
+        border: 0
+      },
+      "aria-live": "assertive",
+      "aria-atomic": "true",
+      ref: this.announcementRef
+    });
+  }
+
 } // Fire on(Pre)RouteUpdate APIs
 
 
@@ -222,7 +273,9 @@ class RouteUpdates extends _react.default.Component {
   }
 
   render() {
-    return this.props.children;
+    return _react.default.createElement(_react.default.Fragment, null, this.props.children, _react.default.createElement(RouteAnnouncer, {
+      location: location
+    }));
   }
 
 }

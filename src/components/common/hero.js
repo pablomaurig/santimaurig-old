@@ -7,7 +7,7 @@ import { Grid, Typography, Container } from '@material-ui/core'
 const Hero = () => {
   const data = useStaticQuery(graphql` 
     query HeroImage{
-      image: file(relativePath: {eq: "hero-image.jpg"}) {
+      image: file(relativePath: {eq: "back-hero.png"}) {
         childImageSharp {
           fixed {
             ...GatsbyImageSharpFixed
@@ -21,7 +21,7 @@ const Hero = () => {
   `)
   const HeroContainer = styled.div`
     position: relative;
-    background-color: #4c1e08;
+    background-color: #fff;
     height: 100vh;
     background-size: cover;
     background-image: ${`url(${data.image.childImageSharp.fluid.src})`};
@@ -39,8 +39,8 @@ const Hero = () => {
       <Container className="container">
         <Grid container alignItems="center" style={{ height: '100%' }}>
           <Grid item xs={12}>
-            <Typography align="center" variant="h2" style={{ color: "white" }}>IMPACTA EN TUS CLIENTES</Typography>
-            <Typography align="center" variant="h4" style={{ color: "white" }}>CON UNA VOZ PROFESIONAL, NATURAL Y VERSATIL</Typography>
+            <Typography align="center" variant="h2" style={{ color: "#000" }}>IMPACTA EN TUS CLIENTES</Typography>
+            <Typography align="center" variant="h4" style={{ color: "#000" }}>CON UNA VOZ PROFESIONAL, NATURAL Y VERSATIL</Typography>
           </Grid>
         </Grid>
       </Container>
