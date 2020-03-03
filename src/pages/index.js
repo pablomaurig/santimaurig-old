@@ -3,14 +3,13 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 // components
 import Img from "gatsby-image"
-import Image from '../components/common/image'
 import Layout from '../components/common/layout'
 import SEO from '../components/common/seo'
 import Hero from '../components/common/hero'
 import SectionAbout from '../components/home/sectionAbout'
 import { Grid, Divider, Container, Box, Typography } from '@material-ui/core'
 import siteConfig from '../data/siteConfig'
-import MyImg from '../components/common/myImg'
+import ImageQuery from '../components/common/imageQuery'
 
 const IndexPage = () => {
   if (typeof window !== "undefined") {
@@ -46,7 +45,7 @@ const IndexPage = () => {
               </Grid>
               {siteConfig.brandsTop.map((brand, i) =>
                 <Grid key={i} item xs={6} sm={4} md={3}>
-                  <Image alt={brand.alt} className='img-responsive' imagen={brand.image} />
+                  <ImageQuery alt={brand.alt} className='img-responsive' imagen={brand.image} />
                 </Grid>
               )}
             </Grid>
@@ -64,7 +63,7 @@ const IndexPage = () => {
               <Grid item xs={12} sm={9}>
                 <Grid container spacing={3} justify="center">
                   <Grid item xs={6} sm={4}>
-                    <MyImg alt={siteConfig.brandsTop[1].alt} className='img-responsive' imagen={siteConfig.brandsTop[0].image} />
+                    <ImageQuery alt={siteConfig.brandsTop[1].alt} className='img-responsive' imagen={siteConfig.brandsTop[0].image} />
                   </Grid>
                   <Grid item xs={6} sm={4}>
                     <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
@@ -126,9 +125,9 @@ const IndexPage = () => {
                   Marcas 2
               </Typography>
               </Grid>
-              {siteConfig.brandsTop.map((brand, i) =>
+              {siteConfig.brandsBottom.map((brand, i) =>
                 <Grid key={i} item xs={6} sm={4} md={3}>
-                  <Image alt={brand.alt} className='img-responsive' imagen={brand.image} />
+                  <ImageQuery alt={brand.alt} className='img-responsive' imagen={brand.image} />
                 </Grid>
               )}
             </Grid>
