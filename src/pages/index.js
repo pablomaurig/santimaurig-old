@@ -1,8 +1,6 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 // components
-import Img from "gatsby-image"
 import Layout from '../components/common/layout'
 import SEO from '../components/common/seo'
 import Hero from '../components/common/hero'
@@ -17,17 +15,6 @@ const IndexPage = () => {
       offset: 64
     })
   }
-  const data = useStaticQuery(graphql`
-    query Home{
-      file(name: {eq: "barritas"}) {
-        childImageSharp {
-          fixed(width: 300, height: 200) {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
-    }
-`)
   return (
     < Layout >
       <StyleContainer>
@@ -63,22 +50,19 @@ const IndexPage = () => {
               <Grid item xs={12} sm={9}>
                 <Grid container spacing={3} justify="center">
                   <Grid item xs={6} sm={4}>
-                    <ImageQuery alt={siteConfig.brandsTop[1].alt} className='img-responsive' imagen={siteConfig.brandsTop[0].image} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
-                  </Grid>
-                  <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                 </Grid>
               </Grid>
@@ -90,7 +74,7 @@ const IndexPage = () => {
           <Container>
             <Grid container spacing={3} justify="center">
               <Grid item xs={12} sm={5}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
               </Grid>
               <Grid item xs={12} sm={7}>
                 <Typography align="left" gutterBottom variant="h5" component="h2">
@@ -103,7 +87,7 @@ const IndexPage = () => {
             </Grid>
             <Grid container spacing={3} justify="center">
               <Grid item xs={12} sm={5}>
-                <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
               </Grid>
               <Grid item xs={12} sm={7}>
                 <Typography align="left" gutterBottom variant="h5" component="h2">
@@ -146,22 +130,22 @@ const IndexPage = () => {
               <Grid item xs={12} sm={9}>
                 <Grid container spacing={3} justify="center">
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                   <Grid item xs={6} sm={4}>
-                    <Img className='img-responsive' fixed={data.file.childImageSharp.fixed} />
+                    <ImageQuery alt='barritas' className='img-responsive' imagen='barritas.jpg' />
                   </Grid>
                 </Grid>
               </Grid>

@@ -9,7 +9,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.9.0",
     "babel-plugin-styled-components": "^1.10.7",
-    "gatsby": "^2.19.27",
+    "gatsby": "^2.19.28",
     "gatsby-image": "^2.2.42",
     "gatsby-plugin-manifest": "^2.2.42",
     "gatsby-plugin-material-ui": "^2.1.6",
