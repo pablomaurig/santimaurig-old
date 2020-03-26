@@ -2,8 +2,14 @@ var plugins = [{
       plugin: require('C:/Users/maurigpi/proyects/santimaurig/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
+      plugin: require('C:/Users/maurigpi/proyects/santimaurig/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
+      options: {"plugins":[],"fonts":[{"family":"Roboto Condensed","variants":["400","700"]},{"family":"Oswald","variants":["400","600","700"]}]},
+    },{
       plugin: require('C:/Users/maurigpi/proyects/santimaurig/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"gatsby-starter-default","short_name":"starter","start_url":"/","background_color":"#663399","theme_color":"#663399","display":"minimal-ui","icon":"src/images/gatsby-icon.png"},
+    },{
+      plugin: require('C:/Users/maurigpi/proyects/santimaurig/node_modules/gatsby-plugin-typography/gatsby-ssr'),
+      options: {"plugins":[],"pathToConfigModule":"src/utils/typography"},
     },{
       plugin: require('C:/Users/maurigpi/proyects/santimaurig/node_modules/gatsby-plugin-material-ui/gatsby-ssr'),
       options: {"plugins":[]},

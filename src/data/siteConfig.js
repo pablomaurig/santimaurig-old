@@ -140,11 +140,13 @@ module.exports = {
   featuredWork: [
     {
       title: 'VOZ EN OFF COMBATE (Canal 9)',
+      image: 'barritas.jpg',
       rol: '“El Jefe” (9ª Generación)',
       staff: 'Conductores: Laura Fernández, “El Pollo” Álvarez y Tito Esperanza.Productor Ejecutivo: Daniel Borro.',
     },
     {
       title: 'VOZ ARTÍSTICA (Vorterix)',
+      image: 'barritas.jpg',
       rol: 'Promocionales y comerciales.',
       staff: 'Director: Mario Pergolini',
     },
