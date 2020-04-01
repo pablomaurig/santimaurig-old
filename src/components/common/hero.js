@@ -7,12 +7,12 @@ import { Grid, Typography, Container } from '@material-ui/core'
 const Hero = ({ props }) => {
   const data = useStaticQuery(graphql` 
     query HeroImage{
-      image: file(relativePath: {eq: "back-hero.png"}) {
+      image: file(name: {eq: "back-hero"}) {
         childImageSharp {
           fixed {
             ...GatsbyImageSharpFixed
           }
-          fluid {
+          fluid (maxWidth: 1400){
             ...GatsbyImageSharpFluid
           }
         }
@@ -21,12 +21,16 @@ const Hero = ({ props }) => {
   `)
   const HeroContainer = styled.div`
     position: relative;
-    background-color: #fff;
+    background-color: #999;
     height: 100vh;
     background-size: cover;
     background-image: ${`url(${data.image.childImageSharp.fluid.src})`};
     border: 2rem solid #fff;
     box-sizing: border-box;
+    background-blend-mode: screen;
+      @media screen and (max-width: 500px){
+        background-position: center;
+      }
     
     .MuiTypography-h2{
       font-size: 3.75rem;
@@ -38,9 +42,10 @@ const Hero = ({ props }) => {
       }
     }
     .MuiTypography-h4{
-      font-size: 2.125rem;
+      font-size: 2.34rem;
+      font-family: "Roboto Condensed", sans-serif;
       @media screen and (max-width: 800px){
-        font-size: 1.125rem;
+        font-size: 1.37em;
       }
       @media screen and (max-width: 500px){
         font-size: 1rem;

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
+import { graphql, useStaticQuery } from 'gatsby'
 // components
 import Layout from '../components/common/layout'
 import SEO from '../components/common/seo'
@@ -27,6 +28,40 @@ const IndexPage = () => {
       offset: 64
     })
   }
+  const data = useStaticQuery(graphql` 
+    query backgroundImages{
+      locucion: file(name: {eq: "locucion"}) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+          fluid (maxWidth: 1400){
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      programas: file(name: {eq: "programas"}) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+          fluid (maxWidth: 1400){
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+  const BoxLocucion = styled(Box)`
+    background-color: #E4EAE6;
+    background-size: cover;
+    background-image: ${`url(${data.locucion.childImageSharp.fluid.src})`};
+    background-blend-mode: screen;
+  `
+  const BoxProgramas = styled(Box)`
+    background-size: cover;
+    background-image: ${`url(${data.programas.childImageSharp.fluid.src})`};
+  `
   return (
     < Layout >
       <StyleContainer>
@@ -50,26 +85,40 @@ const IndexPage = () => {
             </Grid>
           </Container>
         </Box>
-        <Box id='locucion' component="section" py={5} style={{ backgroundColor: "#E4EAE6" }}>
+        <BoxLocucion id='locucion' component="section" py={10}>
           <Container>
             <Grid container spacing={3} justify="center">
-              <Grid item xs={12} sm={3}>
-                <Typography align="center" gutterBottom variant="h5" component="h2">
-                  Locución
-              </Typography>
+              <Grid item xs={12} sm={4} lg={3}>
+                <Typography align="left" gutterBottom variant="h5" component="h2">
+                  {siteConfig.locucionTitle}
+                </Typography>
+                {siteConfig.locucionReeles.map((lreel, key) =>
+
+                  <Typography key={key} align="left" gutterBottom component="p">
+                    <span className='link' onClick={() => {
+                      setVideoId(lreel.id)
+                      handleOpen()
+                    }} onKeyPress={() => {
+                      setVideoId(lreel.id)
+                      handleOpen()
+                    }} role="button" tabIndex="0" style={{ cursor: 'pointer' }}>{lreel.name}</span>
+                  </Typography>
+
+                )}
+
               </Grid>
-              <Grid item xs={12} sm={9}>
-                <Grid container spacing={3} justify="center">
+              <Grid item xs={12} sm={8} lg={9}>
+                <Grid container spacing={3} justify="left">
                   {siteConfig.locucionWork.map((work, key) =>
-                    <Grid item xs={6} sm={4} key={key}>
+                    <Grid item xs={6} sm={4} lg={3} key={key}>
                       <div className='link' onClick={() => {
                         setVideoId(work.id)
                         handleOpen()
                       }} onKeyPress={() => {
                         setVideoId(work.id)
                         handleOpen()
-                      }} role="button" tabIndex="0">
-                        <img src={`https://img.youtube.com/vi/${work.id}/0.jpg`} alt={work.name} />
+                      }} role="button" tabIndex="0" style={{ display: 'inline-flex', cursor: 'pointer' }}>
+                        <img style={{ marginBottom: '0' }} src={`https://img.youtube.com/vi/${work.id}/0.jpg`} alt={work.name} />
                       </div>
                     </Grid>
                   )}
@@ -77,30 +126,42 @@ const IndexPage = () => {
               </Grid>
             </Grid>
           </Container>
+        </BoxLocucion>
+        <Box component="section" pt={10} pb={2}>
+          <Container>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12} style={{ maxWidth: '90%' }}>
+                <Typography className='enjoy' align="center" gutterBottom component="p">
+                  {siteConfig.enjoy}
+                </Typography>
+                <Typography className='love' align="center" gutterBottom component="p">
+                  {siteConfig.love}
+                </Typography>
+              </Grid>
+            </Grid>
+          </Container>
         </Box>
-        <Box component="section" py={5} style={{ backgroundColor: "#F3F0DF" }}>
+        <BoxProgramas component="section" pt={15} pb={10}>
           <Container>
             {siteConfig.featuredWork.map((work, key) =>
-              <Grid key={key} container spacing={3} justify="center">
+              <Grid key={key} container spacing={3} justify="center" style={{ marginBottom: '1em' }}>
                 <Grid item xs={12} sm={4}>
                   <ImageQuery alt={work.title} className='img-responsive' imagen={work.image} />
                 </Grid>
-                <Grid item xs={12} sm={8}>
+                <Grid item xs={12} sm={8} className='box-programa'>
                   <Typography align="left" gutterBottom variant="h5" component="h2">
                     {work.title}
                   </Typography>
                   <Typography align="left" gutterBottom component="p">
                     {work.rol}
                   </Typography>
-                  <Typography align="left" gutterBottom component="p">
-                    {work.staff}
-                  </Typography>
+                  <Typography align="left" gutterBottom component="p"
+                    dangerouslySetInnerHTML={{ __html: work.staff }}></Typography>
                 </Grid>
               </Grid>
             )}
           </Container>
-        </Box>
-        <Container><Divider /></Container>
+        </BoxProgramas>
         <Box component="section" py={5}>
           <Container>
             <Grid container spacing={3} justify="center">
@@ -122,15 +183,28 @@ const IndexPage = () => {
         <Box component="section" py={5}>
           <Container>
             <Grid container spacing={3} justify="center">
-              <Grid item xs={12} sm={3} style={{ order: '2' }}>
-                <Typography align="center" gutterBottom variant="h5" component="h2">
-                  Doblaje
-              </Typography>
+              <Grid item xs={12} sm={4} lg={3} className='doblaje-item'>
+                <Typography align="left" gutterBottom variant="h5" component="h2">
+                  {siteConfig.doblajeTitle}
+                </Typography>
+                {siteConfig.doblajeReeles.map((dreel, key) =>
+
+                  <Typography key={key} align="left" gutterBottom component="p">
+                    <span className='link' onClick={() => {
+                      setVideoId(dreel.id)
+                      handleOpen()
+                    }} onKeyPress={() => {
+                      setVideoId(dreel.id)
+                      handleOpen()
+                    }} role="button" tabIndex="0" style={{ cursor: 'pointer' }}>{dreel.name}</span>
+                  </Typography>
+
+                )}
               </Grid>
-              <Grid item xs={12} sm={9}>
-                <Grid container spacing={3} justify="center">
+              <Grid item xs={12} sm={8} lg={9}>
+                <Grid container spacing={3} justify="left">
                   {siteConfig.doblajeWork.map((work, key) =>
-                    <Grid item xs={6} sm={4} key={key}>
+                    <Grid item xs={6} sm={4} lg={3} key={key}>
                       <div className='link' onClick={() => {
                         setVideoId(work.id)
                         handleOpen()
@@ -213,6 +287,39 @@ const StyleContainer = styled.div`
     width: 100%;
     height: auto;
     
+  }
+  .enjoy{
+    font-size: 2em;
+    line-height: 1.2em;
+  }
+  .love{
+    font-size: 1.35em;
+    line-height: 1.2em;
+  }
+  @media screen and (max-width: 500px){
+    .enjoy{
+      font-size: 1.5em;
+    }
+    .love{
+      font-size: 1.1em;
+    }
+  }
+  @media screen and (min-width: 768px){
+    .box-programa{
+      padding-top: 1.5em!important;
+    }
+  }
+  
+  @media screen and (min-width: 600px){
+    .doblaje-item{
+      order: 2;
+      *{
+        text-align: right;
+      }
+    }
+  }
+  .doblaje-item{
+
   }
 `
 const DialogC = styled(DialogContent)`

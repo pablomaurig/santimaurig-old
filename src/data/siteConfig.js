@@ -68,6 +68,28 @@ module.exports = {
   ],
   clave: 'LA CLAVE DEL ÉXITO ES LA CONFIANZA',
   locucionTitle: 'LOCUCIÓN',
+  locucionReeles: [
+    {
+      id: 'QW-v-ebitHg',
+      name: 'REEL COMERCIAL RIOPLATENCE',
+      video: '',
+    },
+    {
+      id: 'QW-v-ebitHg',
+      name: 'REEL ACTING RIOPLATENCE',
+      video: '',
+    },
+    {
+      id: 'QW-v-ebitHg',
+      name: 'REEL COMERCIAL NEUTRO',
+      video: '',
+    },
+    {
+      id: 'QW-v-ebitHg',
+      name: 'REEL ACTING NEUTRO',
+      video: '',
+    }
+  ],
   locucionWork: [
     {
       id: 'vljh_aN20hc',
@@ -136,13 +158,14 @@ module.exports = {
       video: '',
     },
   ],
-  enjoy: 'LLEVO MÁS DE 12 AÑOS TRABAJANDO DE MANERA ININTERRUMPIDA COMO LOCUTOR PARA ARGENTINA Y TODA LATINOAMÉRICA DISFRUTO HACIENDO LO QUE AMO Y AMO QUE DISFRUTEN LO QUE HAGO',
+  enjoy: 'LLEVO MÁS DE 12 AÑOS TRABAJANDO DE MANERA ININTERRUMPIDA COMO LOCUTOR PARA ARGENTINA Y TODA LATINOAMÉRICA',
+  love: 'DISFRUTO HACIENDO LO QUE AMO Y AMO QUE DISFRUTEN LO QUE HAGO',
   featuredWork: [
     {
       title: 'VOZ EN OFF COMBATE (Canal 9)',
       image: 'barritas.jpg',
       rol: '“El Jefe” (9ª Generación)',
-      staff: 'Conductores: Laura Fernández, “El Pollo” Álvarez y Tito Esperanza.Productor Ejecutivo: Daniel Borro.',
+      staff: 'Conductores: Laura Fernández, “El Pollo” Álvarez y Tito Esperanza. <br>Productor Ejecutivo: Daniel Borro.',
     },
     {
       title: 'VOZ ARTÍSTICA (Vorterix)',
@@ -153,7 +176,34 @@ module.exports = {
   ],
   teamWork: 'ARMEMOS UN EQUIPO DE TRABAJO',
   workLove: 'TRABAJAR DE LO QUE UNO AMA SE LLAMA REALIZACIÓN DIVERTIRSE COMO UN NIÑO EN EL TRABAJO SE LLAMA DOBLAJE',
-  doblajeTitle: 'Doblaje',
+  doblajeTitle: 'DOBLAJE',
+  doblajeReeles: [
+    {
+      id: 'QW-v-ebitHg',
+      name: 'REEL ANIMACIÓN',
+      video: '',
+    },
+    {
+      id: 'QW-v-ebitHg',
+      name: 'REEL ANIMACIÓN CANCIONES',
+      video: '',
+    },
+    {
+      id: 'QW-v-ebitHg',
+      name: 'REEL FICCIÓN',
+      video: '',
+    },
+    {
+      id: 'QW-v-ebitHg',
+      name: 'REEL DOCUMENTAL',
+      video: '',
+    },
+    {
+      id: 'QW-v-ebitHg',
+      name: 'REEL DIRECCIÓN',
+      video: '',
+    }
+  ],
   doblajeWork: [
     {
       id: 'sA6xolN4BUI',
