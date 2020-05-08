@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 exports.__esModule = true;
@@ -7,11 +9,13 @@ exports.init = init;
 exports.shouldUpdateScroll = shouldUpdateScroll;
 exports.RouteUpdates = void 0;
 
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
 var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
-var _loader = _interopRequireDefault(require("./loader"));
+var _loader = _interopRequireWildcard(require("./loader"));
 
 var _redirects = _interopRequireDefault(require("./redirects.json"));
 
@@ -19,12 +23,15 @@ var _apiRunnerBrowser = require("./api-runner-browser");
 
 var _emitter = _interopRequireDefault(require("./emitter"));
 
+var _routeAnnouncerProps = require("./route-announcer-props");
+
 var _router = require("@reach/router");
 
 var _history = require("@reach/router/lib/history");
 
 var _gatsbyLink = require("gatsby-link");
 
+// Convert to a map for faster lookup in maybeRedirect()
 const redirectMap = _redirects.default.reduce((map, redirect) => {
   map[redirect.fromPath] = redirect;
   return map;
@@ -106,7 +113,7 @@ const navigate = (to, options = {}) => {
     // back, the browser will just change the URL and expect JS to handle
     // the change, which won't always work since it might not be a Gatsby
     // page.
-    if (!pageResources || pageResources.status === `error`) {
+    if (!pageResources || pageResources.status === _loader.PageResourceStatus.Error) {
       window.history.replaceState({}, ``, location.href);
       window.location = pathname;
       clearTimeout(timeoutId);
@@ -225,23 +232,9 @@ class RouteAnnouncer extends _react.default.Component {
   }
 
   render() {
-    return _react.default.createElement("div", {
-      id: "gatsby-announcer",
-      style: {
-        position: `absolute`,
-        top: 0,
-        width: 1,
-        height: 1,
-        padding: 0,
-        overflow: `hidden`,
-        clip: `rect(0, 0, 0, 0)`,
-        whiteSpace: `nowrap`,
-        border: 0
-      },
-      "aria-live": "assertive",
-      "aria-atomic": "true",
+    return _react.default.createElement("div", (0, _extends2.default)({}, _routeAnnouncerProps.RouteAnnouncerProps, {
       ref: this.announcementRef
-    });
+    }));
   }
 
 } // Fire on(Pre)RouteUpdate APIs

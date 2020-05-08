@@ -25,11 +25,12 @@ const Hero = ({ props }) => {
     height: 100vh;
     background-size: cover;
     background-image: ${`url(${data.image.childImageSharp.fluid.src})`};
-    border: 2rem solid #fff;
+    border: 4rem solid #fff;
     box-sizing: border-box;
     background-blend-mode: screen;
       @media screen and (max-width: 500px){
         background-position: center;
+        border: 2rem solid #fff;
       }
     
     .MuiTypography-h2{
@@ -62,7 +63,7 @@ const Hero = ({ props }) => {
     <HeroContainer className="hero" style={{ height: '100vh' }}>
       <Container className="container">
         <Grid container alignItems="center" style={{ height: '100%' }}>
-          <Grid item xs={12} style={{ border: "10px solid", padding: "10px" }}>
+          <Grid item xs={12} style={{ border: "10px solid", padding: "10px", backgroundColor: "rgba(255,255,255,0.4)" }}>
             <Typography align="center" variant="h2" style={{ color: "#000" }}>{props.heroTop}</Typography>
             <Typography align="center" variant="h4" style={{ color: "#000" }}>{props.heroBottom}</Typography>
           </Grid>

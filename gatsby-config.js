@@ -2,7 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Santiago Maurig`,
     description: `Sitio web del artista. Doblaje, locución, actor`,
-    author: `@pablomaurig`,
+    image: "/images/backgrounds/back-hero.png",
+    author: 'Santiago Maurig'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -33,13 +34,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `santiago-maurig`,
+        short_name: `santiago`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#F4F0DF`,
+        theme_color: `#ADBE9A`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
       },
     },
     {
