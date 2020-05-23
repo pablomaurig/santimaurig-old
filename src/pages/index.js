@@ -83,6 +83,16 @@ const IndexPage = () => {
           }
         }
       }
+      c1985: file(name: {eq: "1985"}) {
+        childImageSharp {
+          fixed {
+            ...GatsbyImageSharpFixed
+          }
+          fluid (maxWidth: 1400){
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
   const BoxLocucion = styled(Box)`
@@ -116,6 +126,24 @@ const IndexPage = () => {
     background-position-x: right;
     background-position-y: bottom;
     background-image: ${`url(${data.contacto.childImageSharp.fluid.src})`};
+    @media screen and (min-width: 768px){
+      .MuiTypography-h5{
+      font-size: 2.125rem;
+      }
+      .span{
+        font-size: 1.3rem;
+      }
+      .email{
+        font-size: 1.4rem;
+      }
+    }
+
+  `
+  const Box1985 = styled(SectionAbout)`
+    background-size: cover;
+    background-color: #FFE3E5;
+    background-position-x: center;
+    background-image: ${`url(${data.c1985.childImageSharp.fluid.src})`};
   `
   return (
     < Layout >
@@ -148,7 +176,7 @@ const IndexPage = () => {
                 </Typography>
                 {siteConfig.locucionReeles.map((lreel, key) =>
 
-                  <Typography key={key} align="left" gutterBottom style={{ fontSize: '1.25rem' }} component="p">
+                  <Typography key={key} align="left" gutterBottom component="p">
                     <span className='link' onClick={() => {
                       setVideoId(lreel.id)
                       handleOpen()
@@ -177,11 +205,11 @@ const IndexPage = () => {
                     </Grid>
                   )}
                 </Grid>
-                <Grid container spacing={0} style={{ marginTop: '2rem' }} justify="center">
-                  <Grid item>
-                    <Link to='/#contacto'><Button className="squareButton" variant="outlined">{siteConfig.locucionButton}</Button></Link>
-                  </Grid>
-                </Grid>
+              </Grid>
+            </Grid>
+            <Grid container spacing={0} style={{ marginTop: '2rem' }} justify="center">
+              <Grid item>
+                <Link to='/#contacto'><Button className="squareButton" variant="outlined">{siteConfig.locucionButton}</Button></Link>
               </Grid>
             </Grid>
           </Container>
@@ -258,7 +286,7 @@ const IndexPage = () => {
                 </Typography>
                 {siteConfig.doblajeReeles.map((dreel, key) =>
 
-                  <Typography key={key} align="left" gutterBottom style={{ fontSize: '1.25rem' }} component="p">
+                  <Typography key={key} align="left" gutterBottom component="p">
                     <span className='link' onClick={() => {
                       setVideoId(dreel.id)
                       handleOpen()
@@ -286,15 +314,29 @@ const IndexPage = () => {
                     </Grid>
                   )}
                 </Grid>
-                <Grid container spacing={0} style={{ marginTop: '2rem' }} justify="center">
-                  <Grid item>
-                    <Link to='/#contacto'><Button className="squareButton" variant="outlined">{siteConfig.doblajeButton}</Button></Link>
-                  </Grid>
-                </Grid>
+              </Grid>
+            </Grid>
+            <Grid container spacing={0} style={{ marginTop: '2rem' }} justify="center">
+              <Grid item>
+                <Link to='/#contacto'><Button className="squareButton" variant="outlined">{siteConfig.doblajeButton}</Button></Link>
               </Grid>
             </Grid>
           </Container>
         </BoxDoblaje>
+        <Box component="section" py={13}>
+          <Container>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12} style={{ maxWidth: '90%' }} align="center">
+                <Typography className='enjoy' align="center" gutterBottom component="p">
+                  {siteConfig.theVoice}
+                </Typography>
+                <Typography className='love' align="center" gutterBottom component="p">
+                  {siteConfig.voiceChannel}
+                </Typography>
+              </Grid>
+            </Grid>
+          </Container>
+        </Box>
         <BoxDocencia id='docencia' component="section" py={12}>
           <Container style={{ maxWidth: '800px' }}>
             <Grid container spacing={3} justify="center">
@@ -326,22 +368,22 @@ const IndexPage = () => {
             </Grid>
           </Container>
         </BoxDocencia>
-        <SectionAbout titulo={siteConfig.aboutTitle} texto={siteConfig.about} imagen={siteConfig.aboutImage} />
+        <Box1985 titulo={siteConfig.aboutTitle} texto={siteConfig.about} imagen={siteConfig.aboutImage} />
         <BoxContacto id="contacto" component="section" py={10}>
           <Container>
             <Grid container spacing={3} justify="left">
               <Grid item xs={12} className="object">
-                <Typography align="left" gutterBottom variant="h4" component="h2" style={{ marginBottom: "2rem" }}
+                <Typography align="left" gutterBottom variant="h5" component="h2" style={{ marginBottom: "2rem" }}
                   dangerouslySetInnerHTML={{ __html: siteConfig.contactTitle }}></Typography>
-                <Typography className="span" align="left" gutterBottom component="p" style={{ marginBottom: "2rem", fontSize: '1.3rem' }}
+                <Typography className="span" align="left" gutterBottom component="p" style={{ marginBottom: "2rem" }}
                   dangerouslySetInnerHTML={{ __html: siteConfig.contactObjective }}></Typography>
-                <Typography align="right" gutterBottom variant="h4" component="h2"
+                <Typography align="right" gutterBottom variant="h5" component="h2"
                   dangerouslySetInnerHTML={{ __html: siteConfig.contact }}></Typography>
               </Grid>
             </Grid>
             <Grid container spacing={3} justify="end" alignItems="flex-end" style={{ marginTop: "2rem" }}>
               <Grid item xs={12} sm={6}>
-                <Typography align="left" gutterBottom component="p" style={{ fontSize: '1.4rem' }}>
+                <Typography align="left" className='email' gutterBottom component="p">
                   <a className="ic-contact" href="mailto:santiagomaurig@gmail.com"><FaRegEnvelope /><span>santiagomaurig@gmail.com</span></a>
                 </Typography>
                 <Typography className="network" align="left" gutterBottom component="p">
@@ -453,7 +495,10 @@ const StyleContainer = styled.div`
     font-size: 1.2rem;
   }
   .svg-logo{
-    width: 220px;
+    width: 160px;
+      @media screen and (min-width: 540px){
+        width: 220px;
+      }
     height: auto;
     svg{
       width: 100%;

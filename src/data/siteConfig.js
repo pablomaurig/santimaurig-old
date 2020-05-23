@@ -90,7 +90,7 @@ module.exports = {
     {
       id: 'vljh_aN20hc',
       name: 'Locución Comercial - Gordon´s Gin',
-      thumnail: 'gordons.png',
+      thumnail: 'gondons_gin.png',
       video: '',
     },
     {
@@ -102,13 +102,13 @@ module.exports = {
     {
       id: 'i9_shKl5_l0',
       name: 'LOCUCIÓN UNIVERSAL ASSITANCE',
-      thumnail: 'makro.png',
+      thumnail: 'universal_assistance.png',
       video: '',
     },
     {
       id: 'z3zFNFdbacY',
       name: 'PODCAST VORTERIX',
-      thumnail: 'makro.png',
+      thumnail: 'vorterix_playa.png',
       video: '',
     },
     {
@@ -120,7 +120,7 @@ module.exports = {
     {
       id: 'dEbsi3Vb2_U',
       name: 'PUBLICIDAD DE RADIO - ZOETIS',
-      thumnail: 'makro.png',
+      thumnail: 'zoetis.png',
       video: '',
     },
     {
@@ -138,13 +138,13 @@ module.exports = {
     {
       id: 'UiU28Hdj8Dk',
       name: 'Locución en Neutro - IGOLUXE',
-      thumnail: 'igoluxe.png',
+      thumnail: 'igolux.png',
       video: '',
     },
     {
       id: '1tCgIOXEW84',
       name: 'CAFETERAS OSTER ARGENTINA',
-      thumnail: 'igoluxe.png',
+      thumnail: 'cafeteras_oster.png',
       video: '',
     },
     {
@@ -156,13 +156,13 @@ module.exports = {
     {
       id: 'qFccHLbCYJs',
       name: 'CINES HOYTS + BLACKBERRY',
-      thumnail: 'reel_locu_arg.png',
+      thumnail: 'hoyts.png',
       video: '',
     },
     {
       id: '-A2xv35GO5Q',
       name: 'VIERCOLES',
-      thumnail: 'hoyts-viercoles.png',
+      thumnail: 'hoyts_viercoles.png',
       video: '',
     },
     {
@@ -180,31 +180,31 @@ module.exports = {
     {
       id: '8w-TcG5fwCk',
       name: 'ÚLTIMOS CARTUCHOS - VICENTICO',
-      thumnail: 'hoyts.png',
+      thumnail: 'vorterix_vicentico.png',
       video: '',
     },
     {
       id: '7QHWSeGcy9E',
       name: 'YOURBANS LAMOTHE',
-      thumnail: 'hoyts.png',
+      thumnail: 'vorterix_lamote.png',
       video: '',
     },
     {
       id: 'Of61dGgWHEU',
       name: 'VORTERIX SPRING SPECIALS',
-      thumnail: 'hoyts.png',
+      thumnail: 'vorterix_springspecials.png',
       video: '',
     },
     {
       id: 'QMAhW50GvEU',
       name: 'Nokia Lumia App',
-      thumnail: 'nokia-lumia.png',
+      thumnail: 'lumia.png',
       video: '',
     },
     {
       id: 'pirVNzYYUN8',
       name: 'HOYTS - ACTING RADIO',
-      thumnail: 'nokia-lumia.png',
+      thumnail: 'hoyts.png',
       video: '',
     },
   ],
@@ -322,7 +322,8 @@ module.exports = {
     },
   ],
   letContact: 'PONGÁMONOS EN CONTACTO',
-  theVoice: 'LA VOZ ES MUCHO MÁS QUE UNA HERRAMIENTA PARA “DECIR”. ES UN CANAL... POR DONDE PASAN IDEAS, EMOCIONES, SENSACIONES QUE TERMINAN POR CONVERTIRSE EN SONIDOS, PALABRAS. LA DESNATURALIZACIÓN DE ESTE CANAL EXPRESIVO NOS LLEVA A CERRARNOS, A GUARDARNOS TODO ESO QUE SENTIMOS Y TENEMOS PARA DECIR...',
+  theVoice: 'LA VOZ ES MUCHO MÁS QUE UNA HERRAMIENTA PARA “DECIR”. ES UN CANAL... POR DONDE PASAN IDEAS, EMOCIONES, SENSACIONES QUE TERMINAN POR CONVERTIRSE EN SONIDOS, PALABRAS.',
+  voiceChannel: 'LA DESNATURALIZACIÓN DE ESTE CANAL EXPRESIVO NOS LLEVA A CERRARNOS, A GUARDARNOS TODO ESO QUE SENTIMOS Y TENEMOS PARA DECIR...',
   teachingTitle: 'DOCENCIA',
   teaching: 'MI OBJETIVO COMO <b><i>TRANSFORMADOR</i></b> ES MOTIVAR A LAS PERSONAS PARA QUE <b>REDESCUBRAN SU VOZ</b>, Y A TRAVÉS DE ESTA BÚSQUEDA ENCUENTREN <b>SU SELLO PERSONAL</b>, AQUELLO QUE LES HACE ÚNICOS. ',
   experience: [

@@ -131,8 +131,8 @@ const StyledContainer = styled.div`
         color:red;
       }
     }
-    .nav-link + .nav-link{
-      margin-left: 20px;
+    .nav-link{
+      margin-left: 40px;
     }
   }
   
