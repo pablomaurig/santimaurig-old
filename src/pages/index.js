@@ -10,6 +10,8 @@ import SectionAbout from '../components/home/sectionAbout'
 import { Grid, Container, Box, Typography, Button } from '@material-ui/core'
 import siteConfig from '../data/siteConfig'
 import ImageQuery from '../components/common/imageQuery'
+import ImageLocucion from '../components/common/imageLocucion'
+import ImageDoblaje from '../components/common/ImageDoblaje'
 import Dialog from '@material-ui/core/Dialog'
 import DialogContent from '@material-ui/core/DialogContent'
 import { FaYoutubeSquare, FaInstagram, FaTwitterSquare, FaFacebookSquare, FaRegEnvelope, FaLinkedin } from "react-icons/fa"
@@ -171,7 +173,7 @@ const IndexPage = () => {
           <Container>
             <Grid container spacing={3} justify="center">
               <Grid item xs={12} sm={4} lg={3}>
-                <Typography align="left" gutterBottom variant="h4" component="h2">
+                <Typography className='workTitle' align="left" gutterBottom variant="h4" component="h2">
                   {siteConfig.locucionTitle}
                 </Typography>
                 {siteConfig.locucionReeles.map((lreel, key) =>
@@ -200,7 +202,7 @@ const IndexPage = () => {
                         setVideoId(work.id)
                         handleOpen()
                       }} role="button" tabIndex="0" style={{ cursor: 'pointer' }}>
-                        <ImageQuery alt={work.name} className='img-responsive' imagen={work.thumnail} />
+                        <ImageLocucion alt={work.name} className='img-responsive' imagen={work.thumnail} />
                       </div>
                     </Grid>
                   )}
@@ -240,7 +242,7 @@ const IndexPage = () => {
                     setVideoId(work.id)
                     handleOpen()
                   }} role="button" tabIndex="0" style={{ cursor: 'pointer' }}>
-                    <ImageQuery alt={work.title} className='img-responsive' imagen={work.image} />
+                    <ImageLocucion alt={work.title} className='img-responsive' imagen={work.image} />
                   </div>
                 </Grid>
                 <Grid item xs={12} sm={8} className='box-programa'>
@@ -281,7 +283,7 @@ const IndexPage = () => {
           <Container>
             <Grid container spacing={3} justify="center">
               <Grid item xs={12} sm={4} lg={3} className='doblaje-item'>
-                <Typography align="left" gutterBottom variant="h4" component="h2">
+                <Typography className='workTitle' align="left" gutterBottom variant="h4" component="h2">
                   {siteConfig.doblajeTitle}
                 </Typography>
                 {siteConfig.doblajeReeles.map((dreel, key) =>
@@ -309,7 +311,7 @@ const IndexPage = () => {
                         setVideoId(work.id)
                         handleOpen()
                       }} role="button" tabIndex="0">
-                        <ImageQuery alt={work.name} className='img-responsive' imagen={work.thumnail} />
+                        <ImageDoblaje alt={work.name} className='img-responsive' imagen={work.thumnail} />
                       </div>
                     </Grid>
                   )}
@@ -354,7 +356,7 @@ const IndexPage = () => {
                     </Typography>
                 </Grid>
                 {siteConfig.experience.map(exp =>
-                  <Grid item xs={12} sm={4} >
+                  <Grid key={exp.work} item xs={12} sm={4} >
                     <Typography align="center" gutterBottom component="p"
                       dangerouslySetInnerHTML={{ __html: exp.work }}></Typography>
                   </Grid>
@@ -462,6 +464,11 @@ const StyleContainer = styled.div`
   @media screen and (min-width: 768px){
     .box-programa{
       padding-top: 1.5em!important;
+    }
+  }
+  @media screen and (min-width: 980px){
+    .workTitle{
+      font-size: 2.9rem;
     }
   }
   @media screen and (min-width: 600px){

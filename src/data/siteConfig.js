@@ -29,10 +29,19 @@ module.exports = {
       image: 'uaz-hunter.png',
       alt: ''
     }, {
-      image: 'youtube.png',
+      image: 'hoyts.png',
       alt: ''
     }, {
-      image: 'hoyts.png',
+      image: 'puma.png',
+      alt: ''
+    }, {
+      image: 'oster.png',
+      alt: ''
+    }, {
+      image: 'atm.png',
+      alt: ''
+    }, {
+      image: 'makro.png',
       alt: ''
     },
   ],
@@ -63,6 +72,15 @@ module.exports = {
       alt: ''
     }, {
       image: 'netflix.png',
+      alt: ''
+    }, {
+      image: 'tnt.png',
+      alt: ''
+    }, {
+      image: 'fox.png',
+      alt: ''
+    }, {
+      image: 'mtv.png',
       alt: ''
     },
   ],
@@ -114,7 +132,7 @@ module.exports = {
     {
       id: 'pmaY83pfUA0',
       name: 'PAGINAS AMARILLAS',
-      thumnail: 'paginas-amarillas.png',
+      thumnail: 'acting_paginas_amarillas.png',
       video: '',
     },
     {
@@ -149,14 +167,14 @@ module.exports = {
     },
     {
       id: 'OvtZiKcrgM8',
-      name: 'LOCUCION EMPRESARIAL ARGENTINA -VETFLEET',
-      thumnail: 'reel_locu_arg.png',
+      name: 'LOCUCION EMPRESARIAL ARGENTINA - ARTRACK ',
+      thumnail: 'artrack.png',
       video: '',
     },
     {
-      id: 'qFccHLbCYJs',
-      name: 'CINES HOYTS + BLACKBERRY',
-      thumnail: 'hoyts.png',
+      id: 'P5PjI6UZxMk',
+      name: 'Gestión de Flota y Mantenimiento - LATAM',
+      thumnail: 'veec_fleet.png',
       video: '',
     },
     {
@@ -251,7 +269,7 @@ module.exports = {
     {
       id: 'sA6xolN4BUI',
       name: 'Doblaje Latino - Boru (Lobo)',
-      thumnail: 'vorterix_playa.png',
+      thumnail: 'boru.png',
       video: '',
     },
     {
