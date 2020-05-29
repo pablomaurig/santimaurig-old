@@ -245,7 +245,7 @@ module.exports = {
     },
   ],
   teamWork: 'ARMEMOS UN EQUIPO DE TRABAJO',
-  workLove: '<p>TRABAJAR DE LO QUE UNO AMA SE LLAMA <strong>REALIZACIÓN</strong></p><p>DIVERTIRSE COMO UN NIÑO EN EL TRABAJO SE LLAMA <strong>DOBLAJE</strong></p>',
+  workLove: '<p>TRABAJAR DE LO QUE UNO AMA SE LLAMA <b>REALIZACIÓN</b></p><p>DIVERTIRSE COMO UN NIÑO EN EL TRABAJO SE LLAMA <b>DOBLAJE</b></p>',
   doblajeTitle: 'DOBLAJE',
   doblajeButton: 'PONGÁMONOS EN CONTACTO',
   doblajeReeles: [
