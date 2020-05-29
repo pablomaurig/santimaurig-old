@@ -549,6 +549,7 @@ const StyleContainer = styled.div`
 `
 const DialogC = styled(DialogContent)`
     padding: 0!important;
+    overflow-y: hidden!important;
     iframe{
       margin: 0;
       margin-bottom: -7px;

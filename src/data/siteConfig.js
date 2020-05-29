@@ -250,7 +250,7 @@ module.exports = {
   doblajeButton: 'PONGÁMONOS EN CONTACTO',
   doblajeReeles: [
     {
-      id: 'GCOmg8S_-Rg&t',
+      id: 'GCOmg8S_-Rg',
       name: 'REEL ANIMACIÓN',
       video: '',
     },
