@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Santiago Maurig`,
-    description: `Sitio web del artista. Doblaje, locución, actor`,
+    description: `Artista Vocal - Actor - Docente`,
     image: "/images/backgrounds/back-hero.png",
     author: 'Santiago Maurig'
   },
@@ -71,5 +71,5 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-  pathPrefix: `/santimaurig`,
+  // pathPrefix: `/santimaurig`,
 }

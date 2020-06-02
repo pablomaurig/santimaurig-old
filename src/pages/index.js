@@ -268,8 +268,9 @@ const IndexPage = () => {
           <Container style={{ maxWidth: '930px' }}>
             <Grid container spacing={3} justify="center">
               <Grid item xs={12}>
-                <Typography className='workLove' align="center" gutterBottom component="p"
-                  dangerouslySetInnerHTML={{ __html: siteConfig.workLove }}></Typography>
+                <div className='workLove' style={{ textAlign: 'center' }} dangerouslySetInnerHTML={{ __html: siteConfig.workLove }}></div>
+                {/* <Typography className='workLove' align="center" gutterBottom component="p"
+                  dangerouslySetInnerHTML={{ __html: siteConfig.workLove }}></Typography> */}
               </Grid>
               {siteConfig.brandsBottom.map((brand, i) =>
                 <Grid key={i} item xs={4} sm={2} md={2}>
