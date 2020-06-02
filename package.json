@@ -1,7 +1,7 @@
 {
   "name": "Santiago-maurig",
   "private": true,
-  "description": "Personal web site based on Gatsby",
+  "description": "Personal web site",
   "version": "0.1.0",
   "author": "Pablo Maurig <pablomaurig@gmail.com>",
   "dependencies": {
@@ -52,7 +52,6 @@
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
     "deploy": "gatsby build && gh-pages -d public"
-    // "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
