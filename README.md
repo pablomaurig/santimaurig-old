@@ -1,12 +1,14 @@
 <p align="center">
   <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+    <img alt="Gatsby" src="https://raw.githubusercontent.com/pablomaurig/site/master/gatsby-logo.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Barritas by Pablo Maurig
+  Santiago Maurig, vocal artist
 </h1>
+<h4>By Pablo Maurig</h4>
 
+## Custom site design
 
 ## Features
 
