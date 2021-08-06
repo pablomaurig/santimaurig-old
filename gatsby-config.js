@@ -17,18 +17,16 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          {
-            family: `Roboto Condensed`,
-            variants: [`400`, `700`]
-          },
-          {
-            family: `Oswald`,
-            variants: [`400`, `600`, `700`]
-          },
-        ],
+        fonts: {
+          google: [
+            {
+              family: "Open Sans",
+              variants: [`400`, `400i`, `600`, `700`],
+            },
+          ],
+        },
       },
     },
     {
