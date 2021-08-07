@@ -108,6 +108,7 @@ const IndexPage = () => {
     background-size: cover;
     background-position-x: center;
     background-image: ${`url(${data.programas.childImageSharp.fluid.src})`};
+    background-color: #f4f0df;
   `
   const BoxDoblaje = styled(Box)`
     background-color: #b5c0b9;
@@ -216,7 +217,7 @@ const IndexPage = () => {
             </Grid>
           </Container>
         </BoxLocucion>
-        <Box component="section" pt={13} pb={8}>
+        <Box component="section" pt={23} pb={23}>
           <Container>
             <Grid container spacing={3} justify="center">
               <Grid item xs={12} style={{ maxWidth: '90%' }} align="center">
@@ -231,32 +232,42 @@ const IndexPage = () => {
           </Container>
         </Box>
         <BoxProgramas component="section" pt={15} pb={10}>
-          <Container>
-            {siteConfig.featuredWork.map((work, key) =>
-              <Grid key={key} container spacing={3} justify="center" style={{ marginBottom: '1em', maxWidth: '1000px' }}>
-                <Grid item xs={12} sm={4}>
-                  <div className='link' onClick={() => {
-                    setVideoId(work.id)
-                    handleOpen()
-                  }} onKeyPress={() => {
-                    setVideoId(work.id)
-                    handleOpen()
-                  }} role="button" tabIndex="0" style={{ cursor: 'pointer' }}>
-                    <ImageLocucion alt={work.title} className='img-responsive' imagen={work.image} />
-                  </div>
+          <Container style={{ display: 'flex', alignItems: 'center', display: 'flex', flexDirection: 'column' }}>
+            <Typography align="center" className='workTitle' gutterBottom component="h2" variant="h4" style={{ marginBottom: '2rem' }}>VOZ ARTÍSTICA</Typography>
+            <Grid
+              container
+              direction="row" sm={10}
+              justifyContent="center"
+              alignItems="flex-start" spacing={3}>
+              {siteConfig.featuredWork.map((work, key) =>
+                <Grid key={key} item xs={12} sm={6}>
+                  <Grid container spacing={3}
+                    justify="flex-start" style={{ marginBottom: '1em', maxWidth: '1000px' }}>
+                    <Grid item xs={8}>
+                      <div className='link' onClick={() => {
+                        setVideoId(work.id)
+                        handleOpen()
+                      }} onKeyPress={() => {
+                        setVideoId(work.id)
+                        handleOpen()
+                      }} role="button" tabIndex="0" style={{ cursor: 'pointer' }}>
+                        <ImageLocucion alt={work.title} className='img-responsive' imagen={work.image} />
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} className='box-programa'>
+                      <Typography align="left" style={{ fontWeight: 'bold' }} gutterBottom variant="h5" component="h2">
+                        {work.title} <Typography gutterBottom component="small">{work.small}</Typography>
+                      </Typography>
+                      <Typography align="left" gutterBottom component="p">
+                        {work.rol}
+                      </Typography>
+                      <Typography align="left" gutterBottom component="p"
+                        dangerouslySetInnerHTML={{ __html: work.staff }}></Typography>
+                    </Grid>
+                  </Grid>
                 </Grid>
-                <Grid item xs={12} sm={8} className='box-programa'>
-                  <Typography align="left" style={{ fontWeight: 'bold' }} gutterBottom variant="h5" component="h2">
-                    {work.title}
-                  </Typography>
-                  <Typography align="left" gutterBottom component="p">
-                    {work.rol}
-                  </Typography>
-                  <Typography align="left" gutterBottom component="p"
-                    dangerouslySetInnerHTML={{ __html: work.staff }}></Typography>
-                </Grid>
-              </Grid>
-            )}
+              )}
+            </Grid>
             <Grid container spacing={0} style={{ marginTop: '2rem' }} justify="center">
               <Grid item>
                 <Link to='/#contacto'><Button className="squareButton" variant="outlined">{siteConfig.teamWork}</Button></Link>
@@ -266,7 +277,7 @@ const IndexPage = () => {
         </BoxProgramas>
         <Box component="section" py={10}>
           <Container style={{ maxWidth: '930px' }}>
-            <Grid container spacing={3} justify="center">
+            <Grid container spacing={3} justify="center" >
               <Grid item xs={12}>
                 <div className='workLove' style={{ textAlign: 'center' }} dangerouslySetInnerHTML={{ __html: siteConfig.workLove }}></div>
                 {/* <Typography className='workLove' align="center" gutterBottom component="p"
@@ -354,7 +365,7 @@ const IndexPage = () => {
                 <Grid item xs={12} >
                   <Typography className="experience" align="center" variant="h5" component="h2" style={{ marginTop: '1em' }}>
                     EXPERIENCIA LABORAL
-                    </Typography>
+                  </Typography>
                 </Grid>
                 {siteConfig.experience.map(exp =>
                   <Grid key={exp.work} item xs={12} sm={4} >
@@ -410,7 +421,7 @@ const IndexPage = () => {
         aria-describedby="alert-dialog-description"
       >
         <DialogC id="alert-dialog-description">
-          <iframe title="modal" width="560" height="315" src={`https://www.youtube.com/embed/${videoId}?autoplay=1`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe title="modal" width="560" height="315" src={`https://www.youtube.com/embed/${videoId}?rel=0&showinfo=0&autohide=1&autoplay=1`} frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </DialogC>
       </Dialog>
     </Layout >
@@ -523,8 +534,9 @@ const StyleContainer = styled.div`
     }
   }
   .network{
-    display: flex;
     align-items: center;
+    display: flex;
+    margin-left: -3px;
     a{
       margin-right:.5em;
       font-size: 2em;

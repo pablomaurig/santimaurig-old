@@ -29,7 +29,7 @@ module.exports = {
       image: 'uaz-hunter.png',
       alt: ''
     }, {
-      image: 'hoyts.png',
+      image: 'bimbo.png',
       alt: ''
     }, {
       image: 'puma.png',
@@ -41,14 +41,14 @@ module.exports = {
       image: 'atm.png',
       alt: ''
     }, {
-      image: 'makro.png',
+      image: 'quilmes.png',
       alt: ''
     },
   ],
   brandsBottom: [
     {
       image: 'warner.png',
-      alt: 'se'
+      alt: ''
     }, {
       image: 'discovery.png',
       alt: ''
@@ -89,32 +89,32 @@ module.exports = {
   locucionButton: 'EL MOMENTO ES AHORA',
   locucionReeles: [
     {
-      id: 'iPFBDzPFp_Q',
-      name: 'REEL COMERCIAL 2020 - ARGENTINA',
+      id: 'x4p4BXz7tPA',
+      name: 'REEL COMERCIAL - ARGENTINA',
       video: '',
     },
     {
       id: 'cBHeLh3DBZk',
-      name: 'REEL ACTING  2020 - ARGENTINA',
+      name: 'REEL ACTING - ARGENTINA',
       video: '',
     },
     {
-      id: 'qq6KQzRZ5h0',
-      name: 'REEL COMERCIAL 2020 - LATAM',
+      id: 'xl5v3Cwh7hY',
+      name: 'REEL COMERCIAL - LATAM',
       video: '',
     }
   ],
   locucionWork: [
     {
-      id: 'vljh_aN20hc',
-      name: 'Locución Comercial - Gordon´s Gin',
-      thumnail: 'gondons_gin.png',
+      id: 'YZa36-vrilo',
+      name: 'Bimbo Artesano',
+      thumnail: 'bimbo_artesano.png',
       video: '',
     },
     {
-      id: 'SR3DAHqU4Ks',
-      name: 'HIPERMAYORISTA MAKRO',
-      thumnail: 'makro.png',
+      id: 'vljh_aN20hc',
+      name: 'Locución Comercial - Gordon´s Gin',
+      thumnail: 'gondons_gin.png',
       video: '',
     },
     {
@@ -124,33 +124,39 @@ module.exports = {
       video: '',
     },
     {
-      id: 'z3zFNFdbacY',
-      name: 'PODCAST VORTERIX',
-      thumnail: 'vorterix_playa.png',
+      id: 'r9GSO8qHdG8',
+      name: 'Locución - Phillips',
+      thumnail: 'phillips_hue.png',
       video: '',
     },
     {
-      id: 'pmaY83pfUA0',
-      name: 'PAGINAS AMARILLAS',
-      thumnail: 'acting_paginas_amarillas.png',
+      id: 'yijj5WAuKAs',
+      name: 'NOT CO',
+      thumnail: 'not_co.png',
       video: '',
     },
     {
-      id: 'dEbsi3Vb2_U',
-      name: 'PUBLICIDAD DE RADIO - ZOETIS',
-      thumnail: 'zoetis.png',
+      id: '1tCgIOXEW84',
+      name: 'CAFETERAS OSTER ARGENTINA',
+      thumnail: 'cafeteras_oster.png',
       video: '',
     },
     {
-      id: '_M47-FPRoYw',
-      name: 'ACTING DE RADIO PARA MUSIMUNDO',
-      thumnail: 'musimundo.png',
+      id: 'rnD88EjoM74',
+      name: 'Taste Made',
+      thumnail: 'tastemade_plutotv.png',
       video: '',
     },
     {
-      id: 'f6MxXgsY5dM',
-      name: 'ELECCIONES BOCA',
-      thumnail: 'boca.png',
+      id: '-IC3X2PYLqk',
+      name: 'FMS - YPF',
+      thumnail: 'ypf_fms.png',
+      video: '',
+    },
+    {
+      id: 'xQ7c_MyGC-E',
+      name: 'Campaña de Vacunación',
+      thumnail: 'campa_vacunacion.png',
       video: '',
     },
     {
@@ -160,9 +166,15 @@ module.exports = {
       video: '',
     },
     {
-      id: '1tCgIOXEW84',
-      name: 'CAFETERAS OSTER ARGENTINA',
-      thumnail: 'cafeteras_oster.png',
+      id: 'rkrsVlxkV64',
+      name: 'Vacunación EEUU - Voice Acting',
+      thumnail: 'vacu_eeuu_acting.png',
+      video: '',
+    },
+    {
+      id: 'bKt7ZUIlZ3A',
+      name: 'Rapiditas Bimbo',
+      thumnail: 'rapiditas.png',
       video: '',
     },
     {
@@ -230,18 +242,28 @@ module.exports = {
   love: 'DISFRUTO HACIENDO LO QUE AMO Y AMO QUE DISFRUTEN LO QUE HAGO',
   featuredWork: [
     {
-      id: 'zEpEtdW36R4',
-      title: 'VOZ EN OFF COMBATE (Canal 9)',
+      id: '8CyG-pGQBGA',
+      title: 'VORTERIX RADIO',
+      small: '(Argentina)',
+      image: 'locuciones_artisticas_vorterix.png',
+      rol: 'Promocionales y comerciales.',
+      staff: 'Director: Mario Pergolini',
+    },
+    {
+      id: 'dZ12XtTmB2s',
+      title: 'LOVE NATURE',
+      small: '(TV Prepaga, Latam)',
       image: 'combate.png',
       rol: '“El Jefe” (9ª Generación)',
       staff: 'Conductores: Laura Fernández, “El Pollo” Álvarez y Tito Esperanza. <br>Productor Ejecutivo: Daniel Borro.',
     },
     {
-      id: '8CyG-pGQBGA',
-      title: 'VOZ ARTÍSTICA (Vorterix)',
-      image: 'locuciones_artisticas_vorterix.png',
-      rol: 'Promocionales y comerciales.',
-      staff: 'Director: Mario Pergolini',
+      id: 'zEpEtdW36R4',
+      title: 'COMBATE ',
+      small: '(Canal 9, Argentina)',
+      image: 'combate.png',
+      rol: '“El Jefe” (9ª Generación)',
+      staff: 'Conductores: Laura Fernández, “El Pollo” Álvarez y Tito Esperanza. <br>Productor Ejecutivo: Daniel Borro.',
     },
   ],
   teamWork: 'ARMEMOS UN EQUIPO DE TRABAJO',
